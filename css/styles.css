@@ -73,8 +73,6 @@
   background-color: var(--main-theme-color);
   border-right: 2px solid black;
 }
-.quiz__choices-box {
-}
 .quiz__choices {
   list-style-type: none;
   margin: 1rem auto;

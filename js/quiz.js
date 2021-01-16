@@ -8,12 +8,20 @@ export default class Quiz {
         return this.questions[this.currentIndex];
     }
     nextQuestion() {
-        this.currentIndex++;
+        return this.currentIndex++;
     }
-    scoreUp() {
-        return this.score++; 
+    guess(userGuess) {
+        const currentQuestion = this.questions[this.currentIndex];
+        if(currentQuestion.isCorrect(userGuess)) {
+            this.score++; 
+        }
+        this.nextQuestion();
     }
     hasEnded() {
         return this.currentIndex === this.questions.length;
+    }
+    reset() {
+        this.currentIndex = 0;
+        this.score = 0;
     }
 }
